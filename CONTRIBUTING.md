@@ -61,5 +61,9 @@ These are real, billed model runs.
 - Keep `adapters/core-rules.md` and the block in `adapters/copilot-instructions.md` in sync when you change an always-on rule.
 - Write in plain, direct English. Prefer tables and short rules over long prose.
 
+## Reliability review guidance
+
+Use `URV` for verification and reliability review rules. These are manual acceptance checks unless a script explicitly implements them. Keep platform facts, house conventions and observed project lessons distinct, and link primary sources from `references/verification-and-reliability.md`.
+
 ## Code of conduct
 Be respectful and constructive. This project follows the [Contributor Covenant 2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/). Report unacceptable behaviour privately to the maintainers through the contact in the repository profile.

@@ -1,16 +1,27 @@
 ---
 name: outsystems-live-style-guide
-description: OutSystems UI/UX design standards for OutSystems 11 and ODC, covering both OutSystems UI Classic (2.x) and OutSystems UI 3.0 (design-token theme, --osui-* component CSS API, dark mode, retired variables and migration). Covers design tokens, themes and Theme Editor, style-guide architecture and governance, layouts and navigation, responsive design, WCAG 2.2 AA accessibility, all UI patterns, reusable blocks, forms, tables, feedback states and RTL/multilingual UI. Includes a version-aware CSS linter, a contrast checker and lessons from real projects. Use it whenever an agent designs, builds, styles, reviews, migrates or explains any OutSystems screen, block, layout, theme, CSS, form, table, dashboard, login, menu or mobile UI, or picks a pattern, even if the user only says "make it look better", "fix the layout", "make it responsive", "dark mode", "apply our branding", "upgrade OutSystems UI" or "is this accessible", or never names OutSystems UI.
+description: Design, style, review and migrate OutSystems interfaces using the installed OutSystems UI theme, design tokens, responsive layouts, WCAG accessibility and RTL. Includes CSS and contrast tools. Use for visual design, themes and accessibility in O11 or ODC; frontend logic belongs in outsystems-frontend-conventions.
 license: MIT
 metadata:
   version: 2.0.0
-  updated: 2026-11-22
+  updated: "2026-11-22"
   platform: OutSystems 11 (Reactive Web, Mobile, Traditional Web) and ODC; OutSystems UI Classic 2.x and 3.0
-  agent-independent: true
+  agent-independent: "true"
   companion-skill: outsystems-architecture (optional, separate; architecture, layering, data, logic)
 ---
 
 # OutSystems Live Style Guide
+
+## Scope, evidence and consistency
+
+- Run bundled scripts from the skill directory or use absolute paths; do not assume they exist in the application checkout.
+- Establish O11/ODC, application type, installed component versions and the target environment from available evidence; ask only for information that changes the work.
+- Separate **platform facts**, **house defaults**, **project decisions** and **observed lessons**. Project conventions choose among supported designs; they cannot change runtime behavior. The FE/CW/BL/CS chain is an O11 house pattern, not an ODC requirement.
+- Preserve the user's requested scope and existing authorization. Continue routine reversible work; a skill does not authorize publishing, dependency changes or production operations beyond that scope. Do not introduce phase-by-phase approval unless the user or environment requires it.
+- Prefer installed API signatures and version-matched official documentation. A repository development branch, community workaround or old project observation is evidence to investigate, not a release guarantee.
+- Report evidence separately: **prepared → model validated → merged → published → runtime verified**. A static checker passing proves only its covered checks on the supplied inventory. Unknown, blocked and not tested remain explicit.
+- Read [verification and reliability](references/verification-and-reliability.md) when changing data contracts, concurrent operations, runtime behavior or verification. It contains the concrete acceptance checks and sources for this skill.
+
 
 This skill makes an agent design, build and review OutSystems interfaces the way a senior OutSystems UI/UX lead would:
 - on top of the **OutSystems UI** framework (Classic or 3.0);
@@ -45,27 +56,15 @@ Accessibility and responsiveness can't be retrofitted cheaply. Government and en
 | Same in both | `--color-primary`, status roles, 12 palette bases, `--space-*`, utility class names, patterns, `.phone/.tablet/.desktop` |
 
 How to detect it:
-- In the browser console, an empty `--font-size-h1` or a `#f6f7fa` `--color-neutral-0` means 3.0.
-- Check the theme name (Classic = `OutSystemsUIClassic`).
-- Check the project's AGENTS.md.
+- Inspect the installed OutSystems UI dependency version and the actual base-theme chain first. Package version and selected theme are separate facts: a 3.x installation can retain Classic.
+- Compare loaded CSS/public APIs with that release; custom colors, fonts or missing variables are clues only, since overrides and failed stylesheet loads can mimic another version.
+- Record the release/theme evidence in the project’s design notes; use the matching linter mode.
 
 If it's unknown, ask, or write version-safe CSS (roles + `--space-*` + `var(--token-…, literal)`). Details and the full retired → replacement map: `references/osui-versions-and-migration.md`.
 
-## Precedence of rules
+## Applying conventions
 
-When rules disagree, apply them in this order and say which one you used:
-1. **The project's own design system**: a corporate or Global theme, a Figma kit or brand guide, decisions in the project's AGENTS.md. It sets token *values*, such as the brand color or font.
-2. **The house UI standard** in this skill: token use, patterns, states, accessibility, responsiveness, naming, governance.
-3. **OutSystems UI defaults and official guidance**: framework values and behavior, the OutSystems UI Storybook, the `docs-ai/llms*.txt` contracts, and the OutSystems docs.
-
-A project can change *what* the tokens are, never the duty to *use* tokens, meet WCAG AA, and design every state. If a brand asset fails accessibility (e.g. a brand yellow as text), flag it with the contrast numbers and propose a compliant alternative that keeps the brand visible. Don't silently obey it, and don't silently change it.
-
-The companion skill **outsystems-architecture** decides architecture:
-- where themes live (`_Th`);
-- where blocks live (`_CW` / `_MCW`);
-- that screens only compose blocks.
-
-This skill decides how they look and behave.
+Use the project's documented architecture, naming and design choices where supported. Use this skill's house defaults when the project has no decision. Official documentation and installed contracts determine platform behavior; house preferences never override those facts. Record a consequential deviation and its reason. Escalate unresolved security, data-integrity or compatibility conflicts, not ordinary naming or layout choices.
 
 ## Core principles
 1. **Tokens first.** Every color, size, space, radius, shadow and layer comes from a variable or utility class, and you rebrand by changing the variable.
@@ -81,9 +80,9 @@ This skill decides how they look and behave.
 5. **Responsive by device class.** Design phone, tablet and desktop. Use Columns breaks, `.phone/.tablet/.desktop`, Display/Move On Device, and Responsive tables. Breakpoints change only through `SetDeviceBreakpoints` (Reactive defaults: phone < 700, tablet ≤ 1024).
 6. **Accessible by default (WCAG 2.2 AA).**
    - `EnableAccessibilityFeatures = True` on layouts;
-   - text ≥ 4.5:1; boundaries and focus ≥ 3:1;
+   - text ≥ 4.5:1; large text ≥ 3:1; required non-text indicators ≥ 3:1 against adjacent colors; verify actual rendered states;
    - labels bound to inputs; full keyboard use with a visible, unobscured focus ring;
-   - targets ≥ 24px (44 on touch);
+   - targets normally ≥ 24 CSS px under WCAG 2.2 AA, with its stated exceptions; 44px on touch is the house target;
    - headings in order; titles on every screen (including login);
    - color never the only signal.
 7. **One page anatomy.** Layout (Header · Breadcrumbs · Title · Actions · MainContent · Footer), with the same spacing rhythm everywhere.
@@ -105,7 +104,7 @@ This skill decides how they look and behave.
 | Elevation | `--shadow-xs…xl` | `.shadow-xs…xl` classes or `--token-elevation-1…4` |
 | Layers / layout | literal z-index · `--header-size`, `--side-menu-size` | `--layer-global-*`, `--layer-local-tier-*` · plus `--header-size-content`, `--bottom-bar-size`, `--os-safe-area-*` |
 
-**Minimum text size: 12px.** The 11px label sizes exist in both versions but aren't allowed for meaningful text.
+**House minimum text size: 12px (not a WCAG minimum).** The 11px label sizes exist in both versions but aren't allowed for meaningful text.
 
 ## Choosing a pattern (details in `references/patterns-catalog.md`)
 - **Pick one option**:

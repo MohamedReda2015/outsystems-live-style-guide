@@ -46,7 +46,7 @@ test('Every cited rule ID is defined in the checklist or lessons', () => {
     .matchAll(/\|\s*([A-Z0-9]{2,4}-\d{2})\s*\||\*\*([A-Z]{3}-\d{2})/g)].map((m) => m[1] || m[2]));
   assert.ok(defined.size > 100, `only ${defined.size} IDs defined`);
   for (const f of textFiles.filter((x) => !x.startsWith('evals/') && !x.startsWith('tests/'))) {
-    for (const m of read(f).matchAll(/\b((?:TOK|THM|LAY|RSP|A11Y|CMP|FRM|LST|FDB|TXT|PRF|LES|GOV)-\d{2})\b/g)) {
+    for (const m of read(f).matchAll(/\b((?:TOK|THM|LAY|RSP|A11Y|CMP|FRM|LST|FDB|TXT|PRF|LES|GOV|URV)-\d{2})\b/g)) {
       assert.ok(defined.has(m[1]), `${f} cites undefined ${m[1]}`);
     }
   }

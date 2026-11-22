@@ -5,9 +5,9 @@ You are designing, building, reviewing or migrating OutSystems UI (O11 Reactive,
 - the `references/` files hold the details; read the relevant one before acting;
 - these core rules always apply.
 
-**Step 0: version.** Know whether the app uses OutSystems UI **Classic (2.x)** or **3.0** (design-token theme; the default for new apps since 2026) before giving any token or CSS advice. It's recorded in the project's AGENTS.md. In the browser console, an empty `--font-size-h1` or a `#f6f7fa` `--color-neutral-0` means 3.0. If it's unknown, ask, or write version-safe CSS (roles + `--space-*` + `var(--token-…, literal)`).
+**Step 0: version.** Know whether the app uses OutSystems UI **Classic (2.x)** or **3.0** (design-token theme; the default for new apps since 2026) before giving any token or CSS advice. It's recorded in the project's AGENTS.md. Verify the installed dependency release and selected theme separately; colors and missing CSS variables are diagnostic clues, not version proof. If it's unknown, ask, or write version-safe CSS (roles + `--space-*` + `var(--token-…, literal)`).
 
-**Precedence**: project design system (brand values) > house UI standard (this skill) > OutSystems UI defaults and official docs. A brand may change token *values*, never the duty to use tokens, meet WCAG 2.2 AA and design every state. Flag conflicts with numbers. Architecture (where themes and blocks live) follows the companion skill `outsystems-architecture`.
+**Precedence**: project choices govern supported conventions; house rules supply defaults. Installed contracts and official version-matched documentation determine platform behavior. Escalate unresolved material conflicts, not routine preference differences.
 
 **Tokens, never literals**:
 - Both versions: `--color-primary`, status roles, `--space-xs…xxl` (4/8/16/24/32/40/48), utility classes (`.padding-m`, `.margin-top-base`, `.heading1–6`, `.font-size-s|xs`, `.shadow-s`); body 14px, minimum 12px.
@@ -82,3 +82,4 @@ You are designing, building, reviewing or migrating OutSystems UI (O11 Reactive,
 - report only what you saw.
 
 **Reviews**: cite rule IDs from `references/review-checklist.md` (TOK, THM, LAY, RSP, A11Y, CMP, FRM, LST, FDB, TXT, PRF, GOV, LES).
+- Use `references/verification-and-reliability.md` for evidence and domain acceptance checks. Distinguish prepared, validated, merged, published and runtime verified; preserve task scope and existing authorization.

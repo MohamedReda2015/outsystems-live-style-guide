@@ -60,7 +60,7 @@ Check every pair with `node scripts/contrast.mjs <fg> <bg>`. Add `--osui 3` for 
   - input hover border #9fa5ad: 2.48;
   - the focus color `--token-border-focus-default` #b5c0f7: 1.77.
 
-  Accessible themes set the input border to `--color-border-input-press` (#7e858e, 3.73), or put a 2px border on inputs, and set the focus ring color to `--color-primary` (5.53). The 3.0 knobs:
+  Accessible themes set the input border to `--color-border-input-press` (#7e858e, 3.73), and independently verify border contrast (increasing border width alone does not change the contrast ratio), and set the focus ring color to `--color-primary` (5.53). The 3.0 knobs:
   - 3.0.0: `--osui-focus-shadow-color`, `--osui-focus-shadow-width`;
   - dev branch: `--osui-color-focus`, `--osui-focus-ring-width`.
 
@@ -123,7 +123,7 @@ Check every pair with `node scripts/contrast.mjs <fg> <bg>`. Add `--osui 3` for 
 ## 6. Text and zoom
 - Text resizes to 200% (1.4.4). Reflow at 320px width (1.4.10). Text-spacing overrides don't break the layout (1.4.12); `ToggleTextSpacing` lets you test this.
 - Minimum text size is 12px (house rule). Avoid Classic `--font-size-label` and 3.0 `--token-font-size-275` (11px) for meaningful text.
-- `.text-ellipsis` truncation keeps the full text reachable (a title attribute, tooltip or detail view).
+- `.text-ellipsis` truncation keeps the full text reachable (a keyboard- and touch-accessible expansion or detail view; a title attribute alone is insufficient).
 
 ## 7. Audit procedure (for reviews)
 1. Confirm `EnableAccessibilityFeatures = True` on every layout in use.

@@ -15,7 +15,7 @@ When helping with OutSystems screens, blocks, themes, CSS, UX or OutSystems UI u
 
 In 3.0, `--color-neutral-0` isn't white.
 
-Precedence: project brand values > house UI standard > OutSystems UI defaults. Use tokens, meet WCAG 2.2 AA and design every state, whatever the brand.
+Project brand values choose supported design options; house defaults guide omissions, and the installed framework determines available APIs. Use tokens, meet WCAG 2.2 AA and design every state, whatever the brand.
 
 Tokens, never literals:
 - both versions: `--color-primary`, status roles, `--space-xs…xxl`, utility classes;
@@ -57,4 +57,5 @@ Dark mode (3.0): `SetDarkTheme` → `.os-dark-theme` on `<html>`; test light fir
 Verify:
 - `node outsystems-live-style-guide/scripts/lint-ui-css.mjs [--osui 3] [--rtl]` and `contrast.mjs [--osui 3]`;
 - check 3 device sizes, keyboard-only, light and dark.
+- Use `references/verification-and-reliability.md` for evidence and domain acceptance checks. Distinguish prepared, validated, merged, published and runtime verified; preserve task scope and existing authorization.
 <!-- END core rules -->

@@ -29,3 +29,5 @@ Project design decisions (precedence level 1; they override house defaults):
 - Languages / directions: <en LTR, ar RTL>
 - Custom-class prefix (module acronym): <sfl->
 - Breakpoints: <OutSystems UI defaults | SetDeviceBreakpoints(…)>
+
+- Use `references/verification-and-reliability.md` for evidence and domain acceptance checks. Distinguish prepared, validated, merged, published and runtime verified; preserve task scope and existing authorization.

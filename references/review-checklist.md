@@ -56,7 +56,7 @@ Each rule has an ID, a severity, and how to check it.
 | ID | Rule | Sev | Check |
 |---|---|---|---|
 | RSP-01 | Tested at phone, tablet and desktop (reloading after resize); no horizontal page scroll at 320px | Major | browser |
-| RSP-02 | Device differences use `.phone/.tablet/.desktop` classes, Columns breaks or Responsive patterns, not pixel `@media` queries (print excepted) | Minor | lint |
+| RSP-02 | Prefer device classes and responsive patterns; review literal media queries as house-policy warnings and document justified content-driven breakpoints | Minor | lint |
 | RSP-03 | No fixed px widths over 320px on containers; use max-width, Columns, % | Major | lint |
 | RSP-04 | Wide tables choose a responsive mode (cards, expandable or scrollable rows) with selected key columns | Major | browser |
 | RSP-05 | Touch targets ≥ 44px where practical, never < 24px; spacing between targets ≥ `--space-s` | Major (< 24) / Minor | browser |
@@ -68,7 +68,7 @@ Each rule has an ID, a severity, and how to check it.
 | ID | Rule | Sev | Check |
 |---|---|---|---|
 | A11Y-01 | Text contrast ≥ 4.5:1 (≥ 3:1 for large text); no neutral-6/warning/yellow/lime/green/orange as text or under white text | Major | contrast, lint |
-| A11Y-02 | No text under 12px | Major | lint |
+| A11Y-02 | House readability target: meaningful text at least 12px (not a WCAG minimum) | Major | lint |
 | A11Y-03 | Input borders, focus indicators, meaningful icons and chart lines ≥ 3:1 against adjacent colors | Major | contrast |
 | A11Y-04 | Color is never the only signal (status, errors, charts, links) | Major | browser |
 | A11Y-05 | Focus is always visible; no `outline:none` without a replacement; focus ring ≥ 3:1 | Blocker | lint, browser |
@@ -149,3 +149,15 @@ Each rule has an ID, a severity, and how to check it.
 
 ## LES: lessons learned
 See `lessons-learned.md` (LES-01 … LES-24). The linter checks LES-03 (List + flex/grid without hiding the script) and LES-18 (`border-radius: 100%`).
+
+
+## Reliability and evidence (2026-11 review)
+
+These manual checks complement, rather than extend the claimed coverage of, the static scripts. Details and acceptance cases: [verification and reliability](verification-and-reliability.md).
+
+| ID | Severity | Rule |
+|---|---|---|
+| URV-01 | Major | Verify installed release and selected theme separately; do not infer either from a color. |
+| URV-02 | Major | Verify rendered contrast and applicable WCAG criteria; distinguish AA requirements from house/AAA targets. |
+| URV-03 | Major | Test dynamic focus, announcements, RTL and supported assistive settings. |
+| URV-04 | Major | Record visual regression evidence and scope workarounds to the reproduced component/version. |

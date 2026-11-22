@@ -93,3 +93,8 @@ It records the sources researched, the gaps and problems found, and the recommen
 - The focus-variable renames (`--osui-color-focus` etc., ADR-0020) were on the repository's dev branch and not yet in the published 3.0.0 bundle. The theme starter sets both names.
 - The dark-mode client action is `SetDarkTheme` in the 3.0.0 code; the announcement says "SetDarkMode". Use whatever the Toolbox shows.
 - Re-run `contrast.mjs --osui 3 --audit` after each OutSystems UI upgrade, and regenerate `tokens-osui3.json` from the new packages if values change.
+
+
+## Reliability review — 2026-11-22
+
+See [verification and reliability](../references/verification-and-reliability.md) for primary sources, provenance and acceptance cases. Platform facts are separated from house policy and anonymized project observations. A community mirror is not an official publication; installed contracts and version-matched official sources take precedence. Runtime claims were not retested in a live tenant during this documentation review.

@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — reliability review (2026-11-22)
+
+- Clarified platform facts versus house/project conventions and verification evidence.
+- Added domain-specific reliability guidance, source provenance and acceptance cases.
+- Added review/template checks and corrected over-broad or inconsistent claims.
+- Extended repository consistency checks to the new reliability rule IDs and aligned contributor guidance with the full checkout.
+
+
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/). The version is also in the `metadata.version` field of `SKILL.md`.
 
 ## [Unreleased]

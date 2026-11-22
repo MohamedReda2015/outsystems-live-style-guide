@@ -17,6 +17,8 @@ All values below were read from those packages in November 2026.
 ---
 
 ## 1. Detect the version before writing CSS
+
+Confirm the installed dependency release **and** selected base theme first. A 3.x package can keep the Classic theme. The visual probes below are diagnostic hints only: brand overrides, inheritance and missing CSS can change their results. Development-branch APIs must not be assumed present in the installed release.
 | Check | Classic (2.x) | 3.0 |
 |---|---|---|
 | Browser console: `getComputedStyle(document.documentElement).getPropertyValue('--color-primary')` | `#1068eb` | `#105cef` (or your brand) |

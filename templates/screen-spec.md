@@ -58,3 +58,13 @@ Formats: date <…>, number <…>, currency <…>. RTL notes: <icons to mirror, 
 
 ## 8. Acceptance
 - [ ] Lint clean (no Blocker/Major) · [ ] contrast checked · [ ] phone/tablet/desktop verified (reload) · [ ] keyboard-only task done · [ ] empty/error/loading seen · [ ] both languages and directions checked
+
+
+## Evidence and acceptance
+
+- Platform/app type, installed versions/theme where relevant, target environment:
+- Existing project decisions and authorized delivery scope:
+- Requirement → element/contract → source of data → verification evidence:
+- Concurrency, retry/unknown outcome, authorization and failure cases relevant to this change:
+- Delivery status: prepared / model validated / merged / published / runtime verified (record only observed stages):
+- Not tested, missing dependency or blocked evidence, and the exact next step:
