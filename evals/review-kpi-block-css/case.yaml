@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: review-kpi-block-css
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  review.md lists concrete findings with rule IDs and severities. These include: the removed focus outline,
+  low-contrast text (#adb5bd titles, green trend text), text under 12px, the generated-id selector, the global
+  .card override from a block, the fixed 1200px width, and the List grid without the script fix.
+  KpiCard.fixed.css uses OutSystems UI tokens (var(--color-*), var(--space-*), var(--font-size-*), var(--shadow-*),
+  var(--border-radius-*)) instead of literals, uses prefixed classes, keeps a visible focus style, and makes the
+  grid responsive.

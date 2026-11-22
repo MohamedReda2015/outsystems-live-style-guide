@@ -1,0 +1,12 @@
+---
+description: OutSystems UI/UX standards for OutSystems UI Classic (2.x) and 3.0 (design tokens, --osui-* CSS API, dark mode, migration), themes, patterns, responsive, WCAG 2.2 AA accessibility, forms, i18n/RTL and style-guide governance. Apply when designing, building, styling, reviewing or migrating OutSystems screens, blocks, themes or CSS.
+globs: ["**/*.css", "**/*Theme*", "**/*_Th*"]
+alwaysApply: false
+---
+
+Follow the OutSystems UI/UX skill in `outsystems-live-style-guide/` (copy that folder into the repository, or adjust the path).
+
+1. Read `outsystems-live-style-guide/SKILL.md` first, and check the project's OutSystems UI version (Classic or 3.0) in AGENTS.md before suggesting any variable. Load only the `references/*.md` files the task needs; `references/osui-versions-and-migration.md` is relevant for any token or CSS work.
+2. The core rules in `outsystems-live-style-guide/adapters/core-rules.md` are always in force.
+3. After editing CSS, run `node outsystems-live-style-guide/scripts/lint-ui-css.mjs <changed files>`, adding `--osui 3` for 3.0 apps, `--theme` for theme stylesheets and `--rtl` for RTL apps, and fix every Blocker or Major finding. Check new color pairs with `node outsystems-live-style-guide/scripts/contrast.mjs [--osui 3] <fg> <bg>`.
+4. For reviews, cite rule IDs from `references/review-checklist.md`, and use `templates/ui-review-report.md`.

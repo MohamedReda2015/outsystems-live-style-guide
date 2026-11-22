@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: migrate-css-to-osui3
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  RequestCard.osui3.css replaces every retired Classic variable (--shadow-s, --border-size-s, --font-size-h5,
+  --font-semi-bold, --color-orange-lightest/-darker, --border-radius-circle) with OutSystems UI 3.0 roles or
+  --token-* variables that carry literal fallbacks. It uses --color-background-surface (not --color-neutral-0)
+  for the card and --color-text for the title, and converts the physical left/right properties to logical ones for
+  Arabic. notes.md explains that retired variables are silently dropped, and flags visual differences (e.g. the
+  orange palette was recoloured, soft radius is now 8px) for the team to confirm.

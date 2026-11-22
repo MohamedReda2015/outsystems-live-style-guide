@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Test (no dependencies to install)
+        run: npm test
+      - name: Linter smoke run on the 3.0 examples
+        run: node scripts/lint-ui-css.mjs scripts/examples/good-block-osui3.css --osui 3 --rtl

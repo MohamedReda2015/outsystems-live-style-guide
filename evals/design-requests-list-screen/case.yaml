@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: design-requests-list-screen
+expected_outcome: |
+  my-requests-spec.md is a practical screen spec built from OutSystems UI parts: the theme layout with an H1 and one
+  primary "New request" action; a Table or card list with pagination and sorting; status shown as Tags whose color
+  isn't the only signal; search/filter. It distinguishes the empty states (no requests yet vs no results vs error)
+  and has loading states. It gives phone behavior (cards or responsive table, one column) versus desktop. It covers
+  Arabic/RTL (translations, logical alignment, mirrored icons, date/number formats) and basic accessibility.

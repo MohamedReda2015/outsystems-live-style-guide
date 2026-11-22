@@ -1,0 +1,61 @@
+/* =====================================================================
+   <APP>_Th : application theme
+   Base Theme: <Corporate/Global theme>  (set in the theme's properties)
+   Rules:
+     - Change token VALUES here; never hard-code values below this block.
+     - Custom classes use the prefix  app-   (replace with your project code).
+     - Restyle OutSystems UI components only in the marked OVERRIDE sections.
+   ===================================================================== */
+
+/* 1. Brand tokens (Theme Editor writes here too) ---------------------- */
+:root {
+  --color-primary: #1068eb;          /* brand primary: keep ≥ 4.5:1 with white (node scripts/contrast.mjs) */
+  --color-primary-hover: #295fd6;
+  --color-secondary: #303d60;
+  --color-background-body: #f3f6f8;
+
+  /* App-specific tokens: prefixed, for concepts OSUI has no token for */
+  --app-chart-1: var(--color-blue);
+  --app-chart-2: var(--color-teal);
+  --app-chart-3: var(--color-orange-dark);
+  --app-chart-4: var(--color-grape);
+}
+
+/* 2. Fonts (only here) ------------------------------------------------- */
+/* @font-face { font-family: "BrandSans"; src: url(...) format("woff2"); font-weight: 400; font-display: swap; } */
+/* html, body { font-family: "BrandSans", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; } */
+
+/* 3. Accessibility hardening (OSUI defaults below WCAG AA) ------------- */
+.input, textarea.input, .select {
+  border-color: var(--color-neutral-7);                 /* neutral-5 default is 1.49:1 → fails 1.4.11 */
+}
+.is--focusable :focus,
+:focus-visible {
+  outline: var(--border-size-m) solid var(--color-primary);   /* default #a3daff is 1.5:1 */
+  outline-offset: 2px;
+}
+.Button:focus, .btn:focus {
+  box-shadow: 0 0 0 2px var(--color-neutral-0), 0 0 0 4px var(--color-primary);
+}
+.alert.background-warning,
+.alert.background-warning .alert-message {
+  color: var(--color-neutral-10);                        /* white on warning is 2.2:1 */
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } /* lint-ignore THM-02: must beat pattern inline animations */
+}
+
+/* 4. Framework fixes ---------------------------------------------------- */
+.list > script { display: none; }                         /* LES-03: Reactive List + flex/grid */
+
+/* 5. OVERRIDE: OutSystems UI components (brand spec) -------------------- */
+/* .btn { border-radius: var(--border-radius-rounded); }  */
+
+/* 6. Custom app components (prefixed) ----------------------------------- */
+.app-page-section + .app-page-section { margin-top: var(--space-m); }
+
+/* 7. Device-specific ------------------------------------------------------ */
+.phone .app-page-section { padding: var(--space-base); }
+
+/* 8. RTL ------------------------------------------------------------------ */
+.is-rtl .app-icon-forward { transform: scaleX(-1); }

@@ -1,0 +1,22 @@
+.prm-request-card {
+  background: var(--color-neutral-0);
+  box-shadow: var(--shadow-s);
+  border: var(--border-size-s) solid var(--color-neutral-4);
+  border-radius: var(--border-radius-soft);
+  padding: var(--space-m);
+}
+
+.prm-request-card__title {
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-semi-bold);
+  color: var(--color-neutral-9);
+  margin-left: var(--space-s);
+}
+
+.prm-request-card__status {
+  background-color: var(--color-orange-lightest);
+  color: var(--color-orange-darker);
+  border-radius: var(--border-radius-circle);
+  padding-left: var(--space-s);
+  padding-right: var(--space-s);
+}

@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: brand-yellow-warning-banner
+expected_outcome: |
+  The agent warns that #F59F00 text on white (~2.1:1) and white text on #F59F00 fail WCAG AA, with numbers, and
+  proposes a compliant alternative that keeps the brand yellow, e.g. a yellow fill or border with dark
+  (neutral-10/neutral-9) text, or a darker yellow shade for text. WarningBanner.css uses tokens (the brand yellow
+  can map to var(--color-yellow)/var(--color-warning) or a prefixed custom token), prefixed class names, a visible
+  focus style for the button, and no literal spacing or font sizes.

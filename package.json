@@ -1,0 +1,42 @@
+{
+  "name": "outsystems-live-style-guide",
+  "version": "2.0.0",
+  "description": "Agent-independent OutSystems UI/UX standards skill (OutSystems UI Classic and 3.0): design tokens, theming, patterns, responsive, WCAG 2.2 accessibility, governance, plus a CSS token linter and a contrast checker.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "outsystems",
+    "outsystems-ui",
+    "design-system",
+    "design-tokens",
+    "accessibility",
+    "wcag",
+    "css-lint",
+    "agent-skill",
+    "claude-skill",
+    "agents-md"
+  ],
+  "bin": {
+    "osui-lint-css": "scripts/lint-ui-css.mjs",
+    "osui-contrast": "scripts/contrast.mjs"
+  },
+  "scripts": {
+    "test": "node --test",
+    "lint:examples": "node scripts/lint-ui-css.mjs scripts/examples || exit 0",
+    "lint:examples:osui3": "node scripts/lint-ui-css.mjs scripts/examples/classic-to-osui3.css scripts/examples/good-block-osui3.css --osui 3 --rtl || exit 0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "SKILL.md",
+    "references/",
+    "templates/",
+    "scripts/",
+    "adapters/",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ]
+}

@@ -1,0 +1,56 @@
+/* =====================================================================
+   <APP>_Th : application theme for OutSystems UI 3.0 (design-token theme)
+   Base Theme: <Corporate/Global theme>  (set in the theme's properties)
+   Rules:
+     - Override ROLES (--color-*, --border-radius-*, --space-*) and component KNOBS (--osui-*), never component rules.
+     - Every var(--token-*) gets a literal fallback (light --token-* values are not declared at :root).
+     - Custom classes use the prefix  app-   (replace with your module acronym).
+     - Lint: node scripts/lint-ui-css.mjs <this file> --osui 3 --theme [--rtl]
+   ===================================================================== */
+
+/* 1. Brand roles (Theme Editor may write here too: set each variable in ONE section only) */
+:root {
+  --color-primary: #105cef;                 /* keep ≥ 4.5:1 with white: node scripts/contrast.mjs --osui 3 <hex> white */
+  --color-primary-hover: #0f54da;
+  --token-semantics-primary-base: var(--color-primary);   /* links read this token, not --color-primary */
+  --border-radius-default: 8px;             /* re-radius every tier slot (not -soft/-rounded) */
+
+  /* App-specific tokens: prefixed, for concepts OutSystems UI has no role for */
+  --app-chart-1: var(--color-primary);
+  --app-chart-2: var(--color-teal);
+  --app-chart-3: var(--color-orange);
+  --app-chart-4: var(--color-grape);
+}
+
+/* 2. Fonts (only here). Inter is the 3.0 default; add an Arabic face for RTL locales */
+/* :root { --token-font-family: "BrandSans", "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; } */
+/* :lang(ar) { font-family: "BrandArabic", -apple-system, "Segoe UI", Tahoma, sans-serif; } */
+
+/* 3. Accessibility hardening (3.0 defaults below WCAG 1.4.11) */
+:root {
+  --color-border-input: var(--color-border-input-press);   /* #d0d7df is 1.45:1 → #7e858e is 3.73:1 */
+  --osui-focus-shadow-color: var(--color-primary);          /* 3.0.0 knob; default #b5c0f7 is 1.77:1 */
+  --osui-color-focus: var(--color-primary);                 /* knob name on newer builds (ADR-0020) */
+}
+html { scroll-padding-top: calc(var(--header-size) + var(--space-base)); }   /* WCAG 2.4.11 focus not obscured */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } /* lint-ignore THM-02: must beat pattern animations */
+}
+
+/* 4. Framework fixes */
+.list > script { display: none; }                         /* LES-03: Reactive List + flex/grid */
+
+/* 5. Component restyling through knobs (brand spec) */
+/* .card { --osui-card-padding: var(--space-l); } */
+/* .btn-primary { --osui-btn-primary-color: var(--color-text-light); } */
+
+/* 6. Dark mode (SetDarkTheme puts .os-dark-theme on <html>) */
+.os-dark-theme {
+  --color-primary: #6f9bff;                                  /* example: lighter primary for dark surfaces; verify contrast */
+}
+.os-dark-theme .btn-primary { --osui-btn-primary-color: var(--color-text-dark); }   /* label stays readable on a light primary */
+
+/* 7. Custom app components (prefixed, logical properties) */
+.app-page-section + .app-page-section { margin-block-start: var(--space-m); }
+.phone .app-page-section { padding: var(--space-base); }
+.is-rtl .app-icon-forward { transform: scaleX(-1); }

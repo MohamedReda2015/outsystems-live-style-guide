@@ -1,0 +1,42 @@
+/* Example of a block stylesheet that breaks the standard: run
+   node scripts/lint-ui-css.mjs scripts/examples/bad-block.css  */
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.status-label {
+  color: #f59f00;
+  font-size: 11px;
+  margin-left: 16px;
+}
+
+#b3-Container2 .title {
+  font-size: 22px;
+  color: #6a7178 !important;
+}
+
+.kpi-box:focus {
+  outline: none;
+}
+
+.list {
+  display: flex;
+  gap: 24px;
+}
+
+.wide-panel {
+  width: 960px;
+  border: 1px solid #ced4da;
+}
+
+@media (max-width: 768px) {
+  .wide-panel { width: 100%; }
+}
+
+.error-text {
+  color: var(--color-error);
+  background-color: var(--color-error-light);
+}

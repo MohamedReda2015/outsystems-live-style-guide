@@ -1,0 +1,25 @@
+/* A Classic-era (OutSystems UI 2.x) block stylesheet, checked against OutSystems UI 3.0:
+   node scripts/lint-ui-css.mjs scripts/examples/classic-to-osui3.css --osui 3 --rtl  */
+.app-request-card {
+  background: var(--color-neutral-0);
+  box-shadow: var(--shadow-s);
+  border: var(--border-size-s) solid var(--color-neutral-4);
+  padding: var(--space-m);
+}
+
+.app-request-card__title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-semi-bold);
+  margin-left: var(--space-s);
+}
+
+.app-request-card__status {
+  background-color: var(--color-red-lightest);
+  color: var(--token-text-danger);
+}
+
+.app-request-card__badge {
+  border-radius: 100%;
+  color: var(--color-neutral-0);
+  background-color: var(--color-primary);
+}
