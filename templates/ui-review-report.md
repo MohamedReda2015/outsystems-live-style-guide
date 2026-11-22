@@ -36,3 +36,12 @@ Date: <yyyy-mm-dd> · Reviewer: <name/agent> · Scope: <screens, blocks, theme f
 - Concurrency, retry/unknown outcome, authorization and failure cases relevant to this change:
 - Delivery status: prepared / model validated / merged / published / runtime verified (record only observed stages):
 - Not tested, missing dependency or blocked evidence, and the exact next step:
+
+## Delivery trace and tested baseline
+
+- Source revision/locator; requirement, story and criterion IDs:
+- Target app/module version, environment, role, locale and data-provider mode:
+- Expected versus observed result and evidence reference (including test time):
+- Evidence stage: prepared / model validated / merged / published / runtime verified:
+- Changed source/contracts since last test; affected checks to rerun:
+- Outstanding dependent work, owner and next action; scope decisions:

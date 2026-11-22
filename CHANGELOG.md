@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — cross-skill delivery review (2026-11-22)
+
+- Connected requirements, domain implementation and runtime evidence through stable IDs and versioned handoffs.
+- Added domain acceptance guidance, template evidence fields and sourced review checks.
+
+
 ## Unreleased — reliability review (2026-11-22)
 
 - Clarified platform facts versus house/project conventions and verification evidence.

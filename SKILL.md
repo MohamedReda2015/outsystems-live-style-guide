@@ -227,3 +227,5 @@ Follow `references/osui-versions-and-migration.md` §7:
 | `scripts/contrast.mjs` | color pairs, `--suggest`, `--audit` (`--osui 3` for the 3.0 palette) |
 | `scripts/tokens.json` · `scripts/tokens-osui3.json` | machine-readable token sets (edit the values for your brand) |
 | `docs/assessment-2026-11.md` | the research sources and the gap assessment behind version 2.0 of this skill |
+
+For requirement-to-runtime handoffs, also use the cross-skill acceptance section in [verification and reliability](references/verification-and-reliability.md); preserve source/story/criterion IDs and the tested application version.

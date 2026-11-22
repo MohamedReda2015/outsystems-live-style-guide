@@ -35,3 +35,11 @@ Report viewport, browser, theme, locale, state, expected behavior and observed r
 - [Official OutSystems UI release notes](https://www.outsystems.com/forge/component-overview/15931/outsystems-ui-odc) and [OutSystems UI agent documentation](https://github.com/OutSystems/outsystems-ui/blob/dev/docs-ai/llms.txt). The latter is a development branch; use the installed release's matching contract.
 - W3C [contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html), [target size](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum), [reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html), [focus not obscured](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html), [Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance).
 - Anonymized project observations reviewed 2026-11-22: action panels and required reason fields must be tested per role; private data must not enter reusable screenshots. Older stylesheet/load-order workarounds remain version-scoped observations.
+
+### Accessibility through a complete business journey
+
+Agree the WCAG version/level and representative journeys in the BRD/story, then test the installed theme in those states. A clean CSS linter cannot establish that a modal returns focus, a validation summary names its inputs, or progress is announced. Include pending, empty, failure, retry, expired-session and read-only states in the visual specification; record locale and viewport with evidence.
+
+For WCAG 2.2, [Redundant Entry, level A](https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html) requires reuse or selection of information already entered in the same process, with defined exceptions. [Accessible Authentication, level AA](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html) requires an accessible path through cognitive-function challenges; support appropriate assistance such as password managers and paste. Do not turn either criterion into a universal ban on security checks. Check [Status Messages, level AA](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html) for progress and results that should be announced without moving focus.
+
+Keep these acceptance cases with the story rather than accepting palette/contrast measurements as journey completion. Sources reviewed 2026-11-22.

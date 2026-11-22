@@ -161,3 +161,10 @@ These manual checks complement, rather than extend the claimed coverage of, the 
 | URV-02 | Major | Verify rendered contrast and applicable WCAG criteria; distinguish AA requirements from house/AAA targets. |
 | URV-03 | Major | Test dynamic focus, announcements, RTL and supported assistive settings. |
 | URV-04 | Major | Record visual regression evidence and scope workarounds to the reproduced component/version. |
+
+## Cross-skill acceptance
+
+| ID | Severity | Rule | Check |
+|---|---|---|---|
+| URV-05 | Major | Trace accessibility acceptance to the agreed WCAG level, journey states, locale and rendered evidence. | Manual; verification-and-reliability reference. |
+| URV-06 | Major | Review redundant entry and accessible authentication with their stated exceptions, and announce applicable status messages. | Manual; verify against the story acceptance cases. |
