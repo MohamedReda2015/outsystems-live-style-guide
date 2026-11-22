@@ -114,7 +114,7 @@ success (#4aae83) on white (#ffffff) → 2.74:1
 | Platforms | OutSystems 11 (Reactive Web, Mobile, Traditional Web), OutSystems Developer Cloud (ODC) |
 | OutSystems UI | Classic 2.x (Web style guide and Reactive 2.x) and 3.0 (design-token theme; values from `outsystems-ui@3.0.0`, `outsystems-design-tokens@2.6.0`) |
 | Accessibility target | WCAG 2.2 AA |
-| Tools | Node.js 18, 20, 22 (tested in CI); no dependencies |
+| Tools | Node.js 18+ (tested in CI on 22 and 24, the current LTS lines); no dependencies |
 
 ## Repository layout
 ```
@@ -127,6 +127,9 @@ evals/                       realistic test prompts with graders (claude plugin 
 tests/                       node:test suite (tools, structure, rule IDs, links, privacy)
 docs/assessment-2026-11.md   research sources and the gap assessment behind v2.0
 ```
+
+## Companion skill
+This skill covers what users see. For architecture (Architecture Canvas, the Front_End → CW → BL → CS module pattern, data, logic, integrations, security and deployment), use the companion skill **[outsystems-architecture](https://github.com/MohamedReda2015/outsystems-architecture)**. The two skills are designed to load together: this one decides how screens and blocks look and behave, and the architecture skill decides where they live.
 
 ## Contributing
 Corrections, lessons learned, new rules and adapters for more agents are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md). Facts must come from a primary source, state which OutSystems UI version they apply to, and contain no client data. Run `npm test` before opening a PR.
