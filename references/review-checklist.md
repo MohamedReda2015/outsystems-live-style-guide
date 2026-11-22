@@ -40,6 +40,7 @@ Each rule has an ID, a severity, and how to check it.
 | THM-09 | Each variable is set in only one of the theme's two sections (hand-written wins over Theme Editor) | Minor | model |
 | THM-10 | Dark mode (if offered): `.os-dark-theme` on `<html>` (3.0, via `SetDarkTheme`); custom CSS uses roles that flip; contrast verified in both themes; the user's choice persists and defaults to the OS preference | Major | browser, contrast |
 | THM-11 | Fixed and stacked layers use the `--layer-*` (3.0) / z-index scale, not magic z-index values | Minor | model |
+| THM-12 | Traditional Web themes brought over by **Convert to Reactive** are rebuilt on OutSystems UI (Base Theme inheritance, tokens, layouts and patterns) instead of porting their CSS | Major | model, lint |
 
 ## LAY: layout and navigation
 | ID | Rule | Sev | Check |
@@ -146,6 +147,7 @@ Each rule has an ID, a severity, and how to check it.
 | GOV-03 | Theme changes are versioned and pass lint, contrast and a Live Style Guide visual check (light/dark, 3 device sizes) before release | Minor | model |
 | GOV-04 | New apps start from the corporate app template (theme, layout, login, menu pre-set) | Minor | model |
 | GOV-05 | Shared custom blocks expose their own prefixed CSS knobs (`--app-block-prop`) that default to roles or tokens | Minor | model |
+| GOV-06 | CSS changed by an agent is verified on the **served** CSS file after publish (not by screenshot); fixes go to the theme stylesheet or a recreated style-only block | Major | browser |
 
 ## LES: lessons learned
 See `lessons-learned.md` (LES-01 … LES-24). The linter checks LES-03 (List + flex/grid without hiding the script) and LES-18 (`border-radius: 100%`).

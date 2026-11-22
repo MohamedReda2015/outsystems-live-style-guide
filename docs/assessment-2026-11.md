@@ -104,3 +104,9 @@ See [verification and reliability](../references/verification-and-reliability.md
 - Official: [OutSystems testing guidelines](https://success.outsystems.com/documentation/11/testing_apps/outsystems_testing_guidelines/); [develop for testability](https://success.outsystems.com/documentation/11/testing_apps/develop_for_testability/); [ODC UI testing](https://success.outsystems.com/documentation/outsystems_developer_cloud/testing_apps/web_ui_testing/).
 - Standard: [Scrum Guide](https://scrumguides.org/scrum-guide.html); W3C [status messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html), [redundant entry](https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html) and [accessible authentication](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html) where UI criteria apply.
 - Engineering recommendations and generalized project observations: source/app baselines, historical identity, complete consumer imports, action-specific fields, mock/live consistency and honest blocked-work reporting. See `references/verification-and-reliability.md`; these recommendations are distinguished from platform facts.
+
+
+## November 2026 cross-skill review (v2.1.0)
+- OutSystems product updates: O11 MCP (read GA / write Beta), Traditional-to-Reactive conversion (GA), Performance Analytics for Reactive and Mobile (Beta, linked to Code Quality), OutSystems UI 3.0 (GA, 10 Nov 2026) — https://www.outsystems.com/product-updates
+- OutSystems/outsystems11-mcp official skill (contract 2; design notes on edit sessions, timeouts, approvals) — https://github.com/OutSystems/outsystems11-mcp
+- Generalized lessons from agent-driven O11 projects (Model API pitfalls, CSS deploy verification); no client details.

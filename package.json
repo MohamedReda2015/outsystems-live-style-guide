@@ -1,6 +1,6 @@
 {
   "name": "outsystems-live-style-guide",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Agent-independent OutSystems UI/UX standards skill (OutSystems UI Classic and 3.0): design tokens, theming, patterns, responsive, WCAG 2.2 accessibility, governance, plus a CSS token linter and a contrast checker.",
   "private": true,
   "type": "module",

@@ -145,3 +145,8 @@ The `outsystems-ui` repository ships machine-oriented documentation in `docs-ai/
 - JSON schemas per pattern config.
 
 Prefer these over memory when an exact knob, prop or class name matters. Utility grammar: `<property>[-<side>][-<value>]` in long form (`margin-top-base`, `justify-content-space-between`). Tailwind-style names (`p-4`) don't exist.
+
+
+## Platform updates (November 2026 review)
+- **OutSystems UI 3.0 is generally available** (product update, 10 November 2026, O11 and ODC): new default theme, a dark theme, a theme built on design tokens (customize by overriding documented properties, not internal styles), and one design system shared with Mobile UI, with an updated Figma kit. The 3.0 rules in this skill apply; check the installed version before choosing Classic or 3.0 rules.
+- **Traditional Web → Reactive** (`THM-12`): Service Studio's GA **Convert to Reactive** clones and converts a module (producers before consumers). Don't port the Traditional theme's CSS: set the Reactive theme's Base Theme, map colors and spacing to tokens, rebuild layouts and widgets with OutSystems UI patterns, then run the CSS linter and the contrast check.

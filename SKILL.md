@@ -3,11 +3,11 @@ name: outsystems-live-style-guide
 description: Design, style, review and migrate OutSystems interfaces using the installed OutSystems UI theme, design tokens, responsive layouts, WCAG accessibility and RTL. Includes CSS and contrast tools. Use for visual design, themes and accessibility in O11 or ODC; frontend logic belongs in outsystems-frontend-conventions.
 license: MIT
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   updated: "2026-11-22"
   platform: OutSystems 11 (Reactive Web, Mobile, Traditional Web) and ODC; OutSystems UI Classic 2.x and 3.0
   agent-independent: "true"
-  companion-skill: outsystems-architecture (optional, separate; architecture, layering, data, logic)
+  companion-skill: outsystems-architecture (optional, separate; architecture, layering, data, logic); outsystems-ai-mentor (end-to-end lifecycle orchestrator)
 ---
 
 # OutSystems Live Style Guide
@@ -20,6 +20,8 @@ metadata:
 - Preserve the user's requested scope and existing authorization. Continue routine reversible work; a skill does not authorize publishing, dependency changes or production operations beyond that scope. Do not introduce phase-by-phase approval unless the user or environment requires it.
 - Prefer installed API signatures and version-matched official documentation. A repository development branch, community workaround or old project observation is evidence to investigate, not a release guarantee.
 - Report evidence separately: **prepared → model validated → merged → published → runtime verified**. A static checker passing proves only its covered checks on the supplied inventory. Unknown, blocked and not tested remain explicit.
+- Agent work through the Service Studio MCP follows the shared MCP reference in outsystems-architecture (its `service-studio-mcp` reference, rule `OPS-10`): confirm the environment with the user (the MCP can't report it) and stay in Development; one writer per module and a fresh edit session after any human edit or partial merge; read back every write and lay out its flows before merging; keep an agent change log; publish only on an explicit yes. For styles: prefer the theme stylesheet; an edit to a non-empty block or screen stylesheet can merge yet publish the old CSS, so fetch the served CSS file after publishing; block CSS loads before the theme CSS (override with higher specificity); reload after resizing, because the device class is fixed at page load.
+- Related skills: outsystems-architecture (layers, shared MCP reference), outsystems-frontend-conventions (behaviour), outsystems-ai-mentor (end-to-end lifecycle).
 - Read [verification and reliability](references/verification-and-reliability.md) when changing data contracts, concurrent operations, runtime behavior or verification. It contains the concrete acceptance checks and sources for this skill.
 
 

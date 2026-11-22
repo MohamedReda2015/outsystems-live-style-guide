@@ -16,6 +16,12 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/). The version is also in the `metadata.version` field of `SKILL.md`.
 
+## [2.1.0] - 2026-11-22
+Cross-skill review: recent OutSystems changes (Convert to Reactive GA, Performance Analytics Beta, OutSystems UI 3.0 GA, Code Quality as the current name of AI Mentor Studio, O11 MCP contract 2 and governance) and lessons from agent-driven projects.
+- New rules: `THM-12`, `GOV-06`.
+- SKILL.md points to the shared Service Studio MCP reference (architecture `OPS-10`) with this domain's MCP pitfalls.
+- Related skills now include **outsystems-ai-mentor** for end-to-end delivery.
+
 ## [Unreleased]
 
 ## [2.0.0] - 2026-11-22
