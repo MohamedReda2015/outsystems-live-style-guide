@@ -3,14 +3,13 @@
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/). The version is also in the `metadata.version` field of `SKILL.md`.
 
 ## [Unreleased]
-### Changed
-- CI and release workflows: `actions/checkout` and `actions/setup-node` v4 → v7 (the v4 actions run on the deprecated Node 20 runtime); CI matrix Node 22 and 24 (Node 18 and 20 are end-of-life). The tools still run on Node 18+.
-- README: links the companion skill [outsystems-architecture](https://github.com/MohamedReda2015/outsystems-architecture).
 
 ## [2.0.0] - 2026-11-22
-Research-driven update for **OutSystems UI 3.0**. Background and sources: `docs/assessment-2026-11.md`.
+Research-driven update for **OutSystems UI 3.0**, and the first public release. Background and sources: `docs/assessment-2026-11.md`.
 
 **Renamed** from `outsystems-ui-ux` to **`outsystems-live-style-guide`** (display name "OutSystems Live Style Guide"). This covers the skill name, folder, repository, Cursor adapter file and package. If you installed the old name, remove `~/.claude/skills/outsystems-ui-ux` (or the old Claude.ai skill) to avoid two copies.
+
+**Install:** download `outsystems-live-style-guide.zip` from this release and upload it to Claude.ai / Claude Desktop (Settings → Capabilities → Skills), or clone the repository into `~/.claude/skills/` for Claude Code. Other agents: see the README.
 
 ### Added
 - **OutSystems UI 3.0 support** (`references/osui-versions-and-migration.md`):
@@ -36,6 +35,8 @@ Research-driven update for **OutSystems UI 3.0**. Background and sources: `docs/
 
 ### Changed
 - `SKILL.md`: Step 0 (know the OutSystems UI version), tokens cheat sheet per version, updated principles, workflows and reference map.
+- CI and release workflows use `actions/checkout` and `actions/setup-node` v7, and test on Node 22 and 24. The tools still run on Node 18+.
+- README links the companion skill [outsystems-architecture](https://github.com/MohamedReda2015/outsystems-architecture).
 - Responsive: verified breakpoints (Reactive phone < 700 / tablet ≤ 1024; Traditional Web 420/1024) and `SetDeviceBreakpoints`.
 - RTL: utility classes are physical in Classic and logical in 3.0; known community issues (Dropdown Search, popups) and tooling.
 - Theming: Theme Editor vs hand-written section precedence; CSS load order with caveats.
